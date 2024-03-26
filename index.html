@@ -6,7 +6,7 @@
     <title>Audit Trail</title>
     <!-- Add a link to the logo and the font from the Ontario Ministry of Transportation website -->
     <!-- Please note that you need to replace 'logo_url' and 'font_url' with the actual URLs -->
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f0/Mto_ontario_logo.png">
+    <link rel="icon" href="logo_url">
     <link rel="stylesheet" href="font_url">
 </head>
 <body>
@@ -23,6 +23,11 @@
         <h2>Dashboard</h2>
         <p>Welcome to the dashboard. Here you can search and view the Audit Trail.</p>
         <!-- Add more HTML elements as per your requirements -->
+        <div id="searchSection">
+            <!-- Add your search fields here -->
+            <input type="text" id="searchField" placeholder="Search...">
+            <button onclick="showTable()">Search</button>
+        </div>
         <table id="auditTrail" style="display: none;">
             <tr>
                 <th>Event Date & Time stamp</th>
@@ -39,6 +44,20 @@
                 <th>Order</th>
                 <th>unique client ID identifier</th>
                 <th>Electronic Document</th>
+            </tr>
+            <tr>
+                <td>03/25/2024 12:00:00</td>
+                <td></td>
+                <td></td>
+                <td>142.112.235.89</td>
+                <td>Online</td>
+                <td>Login Initiated</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Virtual Office No.</td>
+                <td>Null</td>
+                <td>Null</td>
             </tr>
             <!-- Add more rows as per your requirements -->
         </table>
@@ -59,7 +78,7 @@
             }
         });
 
-        function showAuditTrail() {
+        function showTable() {
             document.getElementById('auditTrail').style.display = 'block';
         }
     </script>
