@@ -28,6 +28,7 @@
             <input type="text" id="TDLNo" placeholder="TDL No">
             <input type="text" id="OPC" placeholder="OPC">
             <select id="otherInfoProduct">
+                <option value="" disabled selected>Select an option</option>
                 <option value="Vehicle record">Vehicle record</option>
                 <option value="Collision report">Collision report</option>
                 <option value="5-year Driver's Licence Abstract">5-year Driver's Licence Abstract</option>
@@ -36,6 +37,8 @@
             <input type="text" id="transactionNumber" placeholder="Transaction number">
             <input type="text" id="orderId" placeholder="Order id">
             <input type="text" id="notificationId" placeholder="Notification Id">
+            <input type="date" id="effectiveFrom" placeholder="Effective From">
+            <input type="date" id="effectiveTo" placeholder="Effective To">
             <button onclick="showTable()">Search</button>
         </div>
         <table id="auditTrail" style="display: none;">
@@ -96,7 +99,21 @@
         });
 
         function showTable() {
-            document.getElementById('auditTrail').style.display = 'block';
+            var DLNo = document.getElementById('DLNo').value;
+            var TDLNo = document.getElementById('TDLNo').value;
+            var OPC = document.getElementById('OPC').value;
+            var otherInfoProduct = document.getElementById('otherInfoProduct').value;
+            var transactionNumber = document.getElementById('transactionNumber').value;
+            var orderId = document.getElementById('orderId').value;
+            var notificationId = document.getElementById('notificationId').value;
+            var effectiveFrom = document.getElementById('effectiveFrom').value;
+            var effectiveTo = document.getElementById('effectiveTo').value;
+
+            if (!DLNo && !TDLNo && !OPC && !otherInfoProduct && !transactionNumber && !orderId && !notificationId && !effectiveFrom && !effectiveTo) {
+                alert('Search criteria fields empty. Please fill at least 1 search field to fetch results');
+            } else {
+                document.getElementById('auditTrail').style.display = 'block';
+            }
         }
 
         function showDetails() {
@@ -105,3 +122,4 @@
     </script>
 </body>
 </html>
+
