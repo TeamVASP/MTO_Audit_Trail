@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Trail</title>
+</head>
+<body>
+    <form id="loginForm" action="/action_page.php" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" value="mtoadmin"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value="wiproadmin"><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+
+    <div id="dashboard" style="display: none;">
+        <!-- Add your dashboard HTML here -->
+        <h2>Dashboard</h2>
+        <p>Welcome to the dashboard. Here you can search and view the Audit Trail.</p>
+        <!-- Add more HTML elements as per your requirements -->
+        <table>
+            <tr>
+                <th>Event Date & Time stamp</th>
+                <th>Transaction Id</th>
+                <th>Session Id</th>
+                <th>IP address</th>
+                <th>Channel Name</th>
+                <th>Activity Description</th>
+                <th>Activity Type</th>
+                <th>Status</th>
+                <th>Item Name</th>
+                <th>Activity performed by (User id of Client/ MTO user)</th>
+                <th>Office No.</th>
+                <th>Order</th>
+                <th>unique client ID identifier</th>
+                <th>Electronic Document</th>
+            </tr>
+            <tr>
+                <td>03/25/2024 12:00:00</td>
+                <td></td>
+                <td></td>
+                <td>142.112.235.89</td>
+                <td>Online</td>
+                <td>Login Initiated</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Null</td>
+                <td>Virtual Office No.</td>
+                <td>Null</td>
+                <td>Null</td>
+            </tr>
+            <!-- Add more rows as per your requirements -->
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'mtoadmin' && password === 'wiproadmin') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+            } else {
+                alert('You are not authorized MTO/SO personnel and can\'t access the feature');
+            }
+        });
+    </script>
+</body>
+</html>
