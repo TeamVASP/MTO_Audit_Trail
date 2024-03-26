@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audit Trail</title>
     <!-- Add a link to the logo and the font from the Ontario Ministry of Transportation website -->
-    <!-- Please note that you need to replace 'logo_url' and 'font_url' with the actual URLs -->
-    <link rel="icon" href="logo_url">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f0/Mto_ontario_logo.png">
     <link rel="stylesheet" href="font_url">
 </head>
 <body>
@@ -25,7 +24,18 @@
         <!-- Add more HTML elements as per your requirements -->
         <div id="searchSection">
             <!-- Add your search fields here -->
-            <input type="text" id="searchField" placeholder="Search...">
+            <input type="text" id="DLNo" placeholder="DL No">
+            <input type="text" id="TDLNo" placeholder="TDL No">
+            <input type="text" id="OPC" placeholder="OPC">
+            <select id="otherInfoProduct">
+                <option value="Vehicle record">Vehicle record</option>
+                <option value="Collision report">Collision report</option>
+                <option value="5-year Driver's Licence Abstract">5-year Driver's Licence Abstract</option>
+                <option value="RIN Summary">RIN Summary</option>
+            </select>
+            <input type="text" id="transactionNumber" placeholder="Transaction number">
+            <input type="text" id="orderId" placeholder="Order id">
+            <input type="text" id="notificationId" placeholder="Notification Id">
             <button onclick="showTable()">Search</button>
         </div>
         <table id="auditTrail" style="display: none;">
